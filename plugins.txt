@@ -7,6 +7,7 @@ credentials-binding
 docker-build-step
 docker-plugin
 docker-workflow
+flexible-publish
 git
 github
 github-branch-source
