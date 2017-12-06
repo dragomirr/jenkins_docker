@@ -2,8 +2,11 @@ ARG jenkins_version=2.73.3
 FROM jenkins/jenkins:${jenkins_version}
 
 USER root
-## set timezone
-RUN ln -fs /usr/share/zoneinfo/CET /etc/localtime
+## set timezone, install docker deps
+RUN ln -fs /usr/share/zoneinfo/CET /etc/localtime \
+    && apt-get update \
+    && apt-get install --assume-yes --no-install-recommends libltdl7 \
+    && rm -rf /var/lib/apt/lists/*
 
 ### install plugins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
