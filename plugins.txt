@@ -19,6 +19,7 @@ ldap
 pam-auth
 pipeline-github-lib
 pipeline-stage-view
+postbuildscript
 timestamper
 ws-cleanup
 workflow-aggregator
